@@ -1,13 +1,13 @@
  <!-- footer area start -->
  <footer class="main-footer bgs-cover overlay rel z-1 pb-25"
-     style="background-image: url(assets/images/backgrounds/footer.jpg);">
+     style="background-image: url({{ asset('clients/assets/images/backgrounds/footer.jpg')}});">
      <div class="container">
          <div class="footer-top pt-100 pb-30">
              <div class="row justify-content-between">
                  <div class="col-xl-5 col-lg-6" data-aos="fade-up" data-aos-duration="1500" data-aos-offset="50">
                      <div class="footer-widget footer-text">
                          <div class="footer-logo mb-25">
-                             <a href="index.html"><img src="assets/images/logos/logo.png" alt="Logo"></a>
+                             <a href="index.html"><img src="{{ asset('clients/assets/images/logos/logo.png')}}" alt="Logo"></a>
                          </div>
                          <p>We curate bespoke itineraries tailored to your preferences, ensuring every trip is seamless
                              and enriching hidden gems beaten</p>
@@ -124,7 +124,7 @@
              <div class="row">
                  <div class="col-lg-5">
                      <div class="copyright-text text-center text-lg-start">
-                         <p>@Copy 2024 <a href="index.html">Ravelo</a>, All rights reserved</p>
+                         <p>@Copy 2024 <a href="{{ route('home') }}">Travela</a>, All rights reserved</p>
                      </div>
                  </div>
                  <div class="col-lg-7 text-center text-lg-end">
@@ -138,7 +138,7 @@
              </div>
              <!-- Scroll Top Button -->
              <button class="scroll-top scroll-to-target" data-target="html"><img
-                     src="assets/images/icons/scroll-up.png" alt="Scroll  Up"></button>
+                     src="{{ asset('clients/assets/images/icons/scroll-up.png')}}" alt="Scroll  Up"></button>
          </div>
      </div>
  </footer>
@@ -173,6 +173,6 @@
 
  </body>
 
- <!-- Mirrored from webtendtheme.net/html/2024/ravelo/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 07 Oct 2024 09:27:04 GMT -->
+ <!-- Mirrored from webtendtheme.net/html/2024/Travela/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 07 Oct 2024 09:27:04 GMT -->
 
  </html>

@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="zxx">
 
-<!-- Mirrored from webtendtheme.net/html/2024/ravelo/404.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 07 Oct 2024 09:28:37 GMT -->
-
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -11,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Title -->
-    <title>Ravelo - Travel & Tour Booking HTML Template</title>
+    <title>Travela - Travel & Tour Booking HTML Template</title>
     <!-- Favicon Icon -->
     <link rel="shortcut icon" href="{{ asset('clients/assets/images/logos/favicon.png') }}" type="image/x-icon">
     <!-- Google Fonts -->
@@ -40,10 +38,10 @@
 <body>
     <div class="page-wrapper">
 
-        <!-- Preloader -->
+        {{-- <!-- Preloader -->
         <div class="preloader">
             <div class="custom-loader"></div>
-        </div>
+        </div> --}}
 
         <!-- main header -->
         <header class="main-header header-one">
@@ -53,7 +51,7 @@
 
                     <div class="header-inner rel d-flex align-items-center">
                         <div class="logo-outer">
-                            <div class="logo"><a href="index.html"><img src="assets/images/logos/logo-two.png"
+                            <div class="logo"><a href="{{ route('home') }}"><img src="{{ asset('clients/assets/images/logos/logo-two.png')}}"
                                         alt="Logo" title="Logo"></a></div>
                         </div>
 
@@ -62,8 +60,8 @@
                             <nav class="main-menu navbar-expand-lg">
                                 <div class="navbar-header">
                                     <div class="mobile-logo">
-                                        <a href="index.html">
-                                            <img src="assets/images/logos/logo-two.png" alt="Logo" title="Logo">
+                                        <a href="{{ route('home') }}">
+                                            <img src="{{ asset('clients/assets/images/logos/logo-two.png')}}" alt="Logo" title="Logo">
                                         </a>
                                     </div>
 
@@ -78,17 +76,17 @@
 
                                 <div class="navbar-collapse collapse clearfix">
                                     <ul class="navigation clearfix">
-                                        <li class="current"><a href="{{ route('home') }}">Home</a></li>
-                                        <li><a href="{{ route('about') }}">About</a></li>
+                                        <li class="current"><a href="{{ route('home') }}">Trang chủ</a></li>
+                                        <li><a href="{{ route('about') }}">Giới thiệu</a></li>
                                         <li class="dropdown"><a href="#">Tours</a>
                                             <ul>
                                                 <li><a href="{{ route('tours') }}">Tour</a></li>
-                                                <li><a href="{{ route('team') }}">Tour Guide</a></li>
+                                                <li><a href="{{ route('team') }}">Hướng dẫn viên</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="{{ route('destination') }}">Destinations</a></li>
-                                        <li><a href="{{ route('contact') }}">Contact Us</a></li>
-                                        <li ><a href="{{ route('blogs') }}">blog</a></li>
+                                        <li><a href="{{ route('destination') }}">Điểm đến</a></li>
+                                        <li><a href="{{ route('contact') }}">Liên hệ</a></li>
+                                        <li ><a href="{{ route('blogs') }}">Blog</a></li>
                                     </ul>
                                 </div>
 
