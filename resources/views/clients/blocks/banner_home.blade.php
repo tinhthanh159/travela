@@ -7,9 +7,6 @@
             <div class="container container-1400">
                 <div class="search-filter-inner" data-aos="zoom-out-down" data-aos-duration="1500" data-aos-offset="50">
                     <div class="filter-item clearfix">
-                        
-                    </div>
-                    <div class="filter-item clearfix">
                         <div class="icon"><i class="fal fa-map-marker-alt"></i></div>
                         <span class="title">Điểm đến</span>
                         <select name="city" id="city">
@@ -38,7 +35,7 @@
                     </div>
                     <div class="search-button">
                         <button class="theme-btn">
-                            <span data-hover="Search">Search</span>
+                            <span data-hover="Search">Tìm kiếm</span>
                             <i class="far fa-search"></i>
                         </button>
                     </div>
