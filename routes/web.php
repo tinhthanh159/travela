@@ -11,6 +11,7 @@ use App\Http\Controllers\clients\ErrorsController;
 use App\Http\Controllers\clients\TourDetailController;
 use App\Http\Controllers\clients\BlogController;
 use App\Http\Controllers\clients\BlogDetailController;
+use App\Http\Controllers\clients\LoginController;
 
 // Route::get('/', function () {
 //     return view('home');
@@ -26,3 +27,4 @@ Route::get(uri: '/tour-detail', action: [TourDetailController::class, 'index' ])
 Route::get(uri: '/contact1', action: [ErrorsController::class, 'index' ])->name(name: 'contact1');
 Route::get(uri: '/blogs', action: [BlogController::class, 'index' ])->name(name: 'blogs');
 Route::get(uri: '/blog-detail', action: [BlogDetailController::class, 'index' ])->name(name: 'blog-detail');
+Route::get(uri: '/login', action: [LoginController::class, 'index' ])->name(name: 'login');

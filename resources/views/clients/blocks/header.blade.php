@@ -35,8 +35,15 @@
 
     {{-- boxicons --}}
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    {{-- Login --}}
+    <!-- Font Icon -->
+    <link rel="stylesheet"
+        href="{{ asset('clients/assets/css/css-login/fonts/material-icon/css/material-design-iconic-font.min.css') }}">
+    <!-- Main css -->
+    <link rel="stylesheet" href="{{ asset('clients/assets/css/css-login/style.css') }}">
 
 </head>
+
 <body>
     <div class="page-wrapper">
 
@@ -66,9 +73,10 @@
                                                 alt="Logo" title="Logo">
                                         </a>
                                     </div>
-                                   
+
                                     <!-- Toggle Button -->
-                                    <button type="button" class="navbar-toggle" data-bs-toggle="collapse" data-bs-target=".navbar-collapse">
+                                    <button type="button" class="navbar-toggle" data-bs-toggle="collapse"
+                                        data-bs-target=".navbar-collapse">
                                         <span class="icon-bar"></span>
                                         <span class="icon-bar"></span>
                                         <span class="icon-bar"></span>
@@ -87,14 +95,14 @@
                                         </li>
                                         <li><a href="{{ route('destination') }}">Điểm đến</a></li>
                                         <li><a href="{{ route('contact') }}">Liên hệ</a></li>
-                                        <li ><a href="{{ route('blogs') }}">Blog</a></li>
+                                        <li><a href="{{ route('blogs') }}">Blog</a></li>
                                     </ul>
                                 </div>
 
                             </nav>
                             <!-- Main Menu End-->
                         </div>
-                        
+
                         <!-- Nav Search -->
                         <div class="nav-search">
                             <button class="far fa-search"></button>
@@ -103,7 +111,7 @@
                                 <button type="submit" class="searchbutton far fa-search"></button>
                             </form>
                         </div>
-                        
+
                         <!-- Menu Button -->
                         <div class="menu-btns py-10">
                             <a href="{{ route('tours') }}" class="theme-btn style-two bgc-secondary">
@@ -114,7 +122,7 @@
                             <div class="menu-sidebar">
                                 <button class="bg-transparent">
                                     <i class='bx bxs-user bx-tada' style="font-size: 36px; color: black;"></i>
-                                </button>                                
+                                </button>
                             </div>
                         </div>
                     </div>
