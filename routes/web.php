@@ -23,7 +23,7 @@ Route::get(uri: '/tours', action: [ToursController::class, 'index' ])->name(name
 Route::get(uri: '/travel-guides', action: [TravelGuidesController::class, 'index' ])->name(name: 'team');
 Route::get(uri: '/destination', action: [DestinationController::class, 'index' ])->name(name: 'destination');
 Route::get(uri: '/contact', action: [ContactController::class, 'index' ])->name(name: 'contact');
-Route::get(uri: '/tour-detail', action: [TourDetailController::class, 'index' ])->name(name: 'tour-detail');
+Route::get(uri: '/tour-detail/{id?}', action: [TourDetailController::class, 'index' ])->name(name: 'tour-detail');
 Route::get(uri: '/contact1', action: [ErrorsController::class, 'index' ])->name(name: 'contact1');
 Route::get(uri: '/blogs', action: [BlogController::class, 'index' ])->name(name: 'blogs');
 Route::get(uri: '/blog-detail', action: [BlogDetailController::class, 'index' ])->name(name: 'blog-detail');

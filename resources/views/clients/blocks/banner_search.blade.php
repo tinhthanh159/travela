@@ -29,7 +29,7 @@
         </div>
         <div class="search-button">
             <button class="theme-btn">
-                <span data-hover="Search">Tìm kiếm</span>
+                <span data-hover="Tìm kiếm">Tìm kiếm</span>
                 <i class="far fa-search"></i>
             </button>
         </div>
