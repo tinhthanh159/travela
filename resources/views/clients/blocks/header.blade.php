@@ -45,14 +45,16 @@
     <link rel="stylesheet" href="{{ asset('clients/assets/css/css-login/style.css') }}">
     {{-- custom css by Tinh --}}
     <link rel="stylesheet" href="{{ asset('clients/assets/css/custom-css.css') }}" />
+    <!-- toastr CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
 
 </head>
 
 <body>
     <div class="page-wrapper">
 
-        {{-- <!-- Preloader -->
-        <div class="preloader"><div class="custom-loader"></div></div> --}}
+        <!-- Preloader -->
+        {{-- <div class="preloader"><div class="custom-loader"></div></div> --}}
 
         <!-- main header -->
         <header class="main-header header-one">
@@ -94,7 +96,7 @@
                                         <li class="{{ Request::url() == route('about') ? 'active' : '' }}"><a
                                                 href="{{ route('about') }}">Giới thiệu</a></li>
                                         <li
-                                        class="dropdown {{ Request::is('tours') || Request::is('team') || Request::is('tour-detail/{id?}') ? 'active' : '' }}">
+                                            class="dropdown {{ Request::is('tours') || Request::is('team') || Request::is('tour-detail/{id?}') ? 'active' : '' }}">
                                             <a href="#">Tours</a>
                                             <ul>
                                                 <li><a href="{{ route('tours') }}">Tours</a></li>
@@ -137,12 +139,17 @@
                                         <i class="bx bxs-user bx-tada " style="font-size: 36px; color: black"></i>
                                     </button>
                                     <ul class="dropdown-menu" id="dropdownMenu">
-                                        <li><a href="{{ route('login') }}">Đăng nhập</a></li>
-                                        <li><a href="#">Thông tin cá nhân</a></li>
+                                        @if (session()->has('username'))
+                                            <li><a href="#">Thông tin cá nhân</a></li>
+                                            <li><a href="#">Tour đã đặt</a></li>
+                                            <li><a href="{{ route('logout') }}">Đăng xuất</a></li>
+                                        @else
+                                            <li><a href="{{ route('login') }}">Đăng nhập</a></li>
+                                        @endif
                                     </ul>
                                 </li>
                             </div>
-                            
+
                         </div>
                     </div>
                 </div>
