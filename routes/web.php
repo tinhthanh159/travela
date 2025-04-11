@@ -27,6 +27,7 @@ Route::get('/filter-tours', [ToursController::class, 'filterTours'])->name('filt
 Route::get( '/travel-guides',   [TravelGuidesController::class, 'index' ])->name(name: 'team');
 Route::get( '/destination',   [DestinationController::class, 'index' ])->name(name: 'destination');
 Route::get( '/contact',   [ContactController::class, 'index' ])->name(name: 'contact');
+Route::post('/create-contact', [ContactController::class, 'createContact'])->name('create-contact');
 Route::get( '/tour-detail/{id?}',   [TourDetailController::class, 'index' ])->name(name: 'tour-detail');
 Route::get( '/contact1',   [ErrorsController::class, 'index' ])->name(name: 'contact1');
 Route::get( '/blogs',   [BlogController::class, 'index' ])->name(name: 'blogs');

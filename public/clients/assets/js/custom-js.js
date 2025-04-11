@@ -906,29 +906,50 @@ $(document).ready(function () {
     //  *             PAGE CONTACT             *
     //  * ***************************************/
 
-
-    // $('#contactForm').submit(function (event) {
-    //     event.preventDefault();
-
-    //     var name = $('#name').val();
-    //     var phoneNumber = $('#phone_number').val();
-    //     var message = $('#message').val();
-
-    //     $('.error').remove();
-
-    //     if (sqlInjectionPattern.test(name)) {
-    //         $('#name').after('<span class="error" style="color: red;">Vui lòng nhập tên hợp lệ và không chứa ký tự đặc biệt.</span>');
-    //         return false;
-    //     }
-
-    //     if (sqlInjectionPattern.test(phoneNumber)) {
-    //         $('#phone_number').after('<span class="error" style="color: red;">Vui lòng nhập số điện thoại hợp lệ và không chứa ký tự đặc biệt.</span>');
-    //         return false;
-    //     }
-
-
-    //     this.submit();
-    // });
+    $('#contactForm').submit(function (event) {
+        event.preventDefault();
+    
+        var name = $('#name').val();
+        var phoneNumber = $('#phone_number').val();
+        var email = $('#email').val();
+        var message = $('#message').val();
+    
+        $('.error').remove();
+    
+        if (sqlInjectionPattern.test(name)) {
+            $('#name').after('<span class="error" style="color: red;">Vui lòng nhập tên hợp lệ và không chứa ký tự đặc biệt.</span>');
+            return false;
+        }
+    
+        if (sqlInjectionPattern.test(phoneNumber)) {
+            $('#phone_number').after('<span class="error" style="color: red;">Vui lòng nhập số điện thoại hợp lệ và không chứa ký tự đặc biệt.</span>');
+            return false;
+        }
+    
+        $.ajax({
+            url: '/create-contact',
+            method: 'POST',
+            data: {
+                name: name,
+                phone_number: phoneNumber,
+                email: email,
+                message: message,
+                _token: $('input[name="_token"]').val()
+            },
+            success: function(response) {
+                if (response.success) {
+                    toastr.success(response.message);
+                    $('#contactForm')[0].reset(); // reset form nếu muốn
+                } else {
+                    toastr.warning("Gửi không thành công. Vui lòng thử lại!");
+                }
+            },
+            error: function() {
+                toastr.error("Lỗi hệ thống. Vui lòng thử lại sau!");
+            }
+        });
+    });
+    
     // /****************************************
     //  *             HANDLE SEARCH            *
     //  * ***************************************/

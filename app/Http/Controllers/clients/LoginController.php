@@ -102,7 +102,7 @@ class LoginController extends Controller
         if ($user_login != null) {
             $request->session()->put('username', $username);
             //$request->session()->put('avatar', $user->avatar);
-            Toastr::success('Đăng nhập thành công!', ['timeOut' => 5000]); 
+            toastr::success('Đăng nhập thành công!', ['timeOut' => 5000]); 
             return response()->json([
                 'success' => true,
                 'message' => 'Đăng nhập thành công!',

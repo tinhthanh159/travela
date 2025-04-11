@@ -107,6 +107,12 @@
         alert("{{ session('error') }}");
     </script>
 @endif
+@if (session('success'))
+<script>
+    toastr.success("{{ session('success') }}");
+</script>
+@endif
+
 <!-- Jquery -->
 <script src="{{ asset('clients/assets/js/jquery-3.6.0.min.js') }}"></script>
 <!-- Bootstrap -->

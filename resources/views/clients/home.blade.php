@@ -72,7 +72,7 @@
                             </div>
                         </div>
                     </div>
-                    <a href="destination1.html" class="theme-btn mt-10 style-two">
+                    <a href="{{ route('destination') }}" class="theme-btn mt-10 style-two">
                         <span data-hover="Khám phá điểm đến">Khám phá điểm đến</span>
                         <i class="fal fa-arrow-right"></i>
                     </a>
@@ -97,107 +97,54 @@
 
 
 <!-- Popular Destinations Area start -->
-<section class="popular-destinations-area rel z-1">
-    <div class="container-fluid">
-        <div class="popular-destinations-wrap br-20 bgc-lighter pt-100 pb-70">
-            <div class="row justify-content-center">
-                <div class="col-lg-12">
-                    <div class="section-title text-center counter-text-wrap mb-70" data-aos="fade-up"
-                        data-aos-duration="1500" data-aos-offset="50">
-                        <h2>Khám phá các điểm đến phổ biến</h2>
-                        <p>Website <span class="count-text plus" data-speed="3000" data-stop="240800">0</span> trải nghiệm phổ biến nhất</p>
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-xl-3 col-md-6">
-                        <div class="destination-item style-two" data-aos="flip-up" data-aos-duration="1500"
-                            data-aos-offset="50">
-                            <div class="image">
-                                <a href="#" class="heart"><i class="fas fa-heart"></i></a>
-                                <img src="{{ asset('clients/assets/images/destinations/destination1.jpg')}}" alt="Destination">
-                            </div>
-                            <div class="content">
-                                <h6><a href="destination-details.html">Thailand beach</a></h6>
-                                <span class="time">5352+ tours & 856+ Activity</span>
-                                <a href="#" class="more"><i class="fas fa-chevron-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-md-6">
-                        <div class="destination-item style-two" data-aos="flip-up" data-aos-delay="100"
-                            data-aos-duration="1500" data-aos-offset="50">
-                            <div class="image">
-                                <a href="#" class="heart"><i class="fas fa-heart"></i></a>
-                                <img src="{{ asset('clients/assets/images/destinations/destination2.jpg')}}" alt="Destination">
-                            </div>
-                            <div class="content">
-                                <h6><a href="destination-details.html">Parga, Greece</a></h6>
-                                <span class="time">5352+ tours & 856+ Activity</span>
-                                <a href="#" class="more"><i class="fas fa-chevron-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="destination-item style-two" data-aos="flip-up" data-aos-delay="200"
-                            data-aos-duration="1500" data-aos-offset="50">
-                            <div class="image">
-                                <a href="#" class="heart"><i class="fas fa-heart"></i></a>
-                                <img src="{{ asset('clients/assets/images/destinations/destination3.jpg')}}" alt="Destination">
-                            </div>
-                            <div class="content">
-                                <h6><a href="destination-details.html">Castellammare del Golfo, Italy</a></h6>
-                                <span class="time">5352+ tours & 856+ Activity</span>
-                                <a href="#" class="more"><i class="fas fa-chevron-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="destination-item style-two" data-aos="flip-up" data-aos-duration="1500"
-                            data-aos-offset="50">
-                            <div class="image">
-                                <a href="#" class="heart"><i class="fas fa-heart"></i></a>
-                                <img src="{{ asset('clients/assets/images/destinations/destination4.jpg')}}" alt="Destination">
-                            </div>
-                            <div class="content">
-                                <h6><a href="destination-details.html">Reserve of Canada, Canada</a></h6>
-                                <span class="time">5352+ tours & 856+ Activity</span>
-                                <a href="#" class="more"><i class="fas fa-chevron-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-md-6">
-                        <div class="destination-item style-two" data-aos="flip-up" data-aos-delay="100"
-                            data-aos-duration="1500" data-aos-offset="50">
-                            <div class="image">
-                                <a href="#" class="heart"><i class="fas fa-heart"></i></a>
-                                <img src="{{ asset('clients/assets/images/destinations/destination5.jpg')}}" alt="Destination">
-                            </div>
-                            <div class="content">
-                                <h6><a href="destination-details.html">Dubai united states</a></h6>
-                                <span class="time">5352+ tours & 856+ Activity</span>
-                                <a href="#" class="more"><i class="fas fa-chevron-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-md-6">
-                        <div class="destination-item style-two" data-aos="flip-up" data-aos-delay="200"
-                            data-aos-duration="1500" data-aos-offset="50">
-                            <div class="image">
-                                <a href="#" class="heart"><i class="fas fa-heart"></i></a>
-                                <img src="{{ asset('clients/assets/images/destinations/destination6.jpg')}}" alt="Destination">
-                            </div>
-                            <div class="content">
-                                <h6><a href="destination-details.html">Milos, Greece</a></h6>
-                                <span class="time">5352+ tours & 856+ Activity</span>
-                                <a href="#" class="more"><i class="fas fa-chevron-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
+<section class="popular-destinations-area pt-100 pb-90 rel z-1">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-12">
+                <div class="section-title text-center counter-text-wrap mb-40" data-aos="fade-up" data-aos-duration="1500"
+                    data-aos-offset="50">
+                    <h2>Khám phá các điểm đến phổ biến</h2>
+                    <p>Website <span class="count-text plus" data-speed="3000" data-stop="34500">0</span> trải nghiệm phổ
+                        biến nhất mà bạn sẽ nhớ</p>
+                    <ul class="destinations-nav mt-30">
+                        <li data-filter="*" class="active">Tất cả</li>
+                        <li data-filter=".domain-b">Miền Bắc</li>
+                        <li data-filter=".domain-t">Miền Trung</li>
+                        <li data-filter=".domain-n">Miền Nam</li>
+                    </ul>
                 </div>
             </div>
         </div>
+        <div class="container">
+            <div class="row gap-10 destinations-active justify-content-center">
+                @php $count = 0; @endphp
+                @foreach ($tours as $tour)
+                    @if ($count % 3 == 2)
+                        <div class="col-md-6 item domain-{{ $tour->domain }}">
+                        @else
+                            <div class="col-xl-3 col-md-6 item domain-{{ $tour->domain }}">
+                    @endif
+                    <div class="destination-item style-two" data-aos-duration="1500" data-aos-offset="50">
+                        <div class="image" style="max-height: 250px">
+                            <a href="#" class="heart"><i class="fas fa-heart"></i></a>
+                            <img src="{{ asset('clients/assets/images/gallery-tours/' . $tour->images[0]) }}"
+                                alt="Destination">
+                        </div>
+                        <div class="content">
+                            <h6 class="tour-title"><a
+                                    href="{{ route('tour-detail', ['id' => $tour->tourId]) }}">{{ $tour->title }}</a>
+                            </h6>
+                            <span class="time">{{ $tour->time }}</span>
+                            <a href="{{ route('tour-detail', ['id' => $tour->tourId]) }}" class="more"><i
+                                    class="fas fa-chevron-right"></i></a>
+                        </div>
+                    </div>
+            </div>
+            @php $count++; @endphp
+            @endforeach
+
+        </div>
+    </div>
     </div>
 </section>
 <!-- Popular Destinations Area end -->
@@ -215,18 +162,22 @@
                     </div>
                     <div class="features-customer-box">
                         <div class="image">
-                            <img src="{{ asset('clients/assets/images/features/features-box.jpg')}}" alt="Features">
+                            <img src="{{ asset('clients/assets/images/features/features-box.jpg') }}" alt="Features">
                         </div>
                         <div class="content">
                             <div class="feature-authors mb-15">
-                                <img src="{{ asset('clients/assets/images/features/feature-author1.jpg')}}" alt="Author">
-                                <img src="{{ asset('clients/assets/images/features/feature-author2.jpg')}}" alt="Author">
-                                <img src="{{ asset('clients/assets/images/features/feature-author3.jpg')}}" alt="Author">
+                                <img src="{{ asset('clients/assets/images/features/feature-author1.jpg') }}"
+                                    alt="Author">
+                                <img src="{{ asset('clients/assets/images/features/feature-author2.jpg') }}"
+                                    alt="Author">
+                                <img src="{{ asset('clients/assets/images/features/feature-author3.jpg') }}"
+                                    alt="Author">
                                 <span>4k+</span>
                             </div>
                             <h6>850K+ Khách hàng hài lòng</h6>
                             <div class="divider style-two counter-text-wrap my-25"><span><span class="count-text plus"
-                                        data-speed="3000" data-stop="5">0</span> Năm</span></div>
+                                        data-speed="3000" data-stop="5">0</span>
+                                    Năm</span></div>
                             <p>Chúng tôi tự hào cung cấp các hành trình được cá nhân hóa</p>
                         </div>
                     </div>
@@ -238,15 +189,15 @@
                         <div class="feature-item">
                             <div class="icon"><i class="flaticon-tent"></i></div>
                             <div class="content">
-                                <h5><a href="{{route('tours')}}">Cắm trại bằng lều</a></h5>
-                                <p>Khám phá du lịch tốt nhất Việt Nam</p>
+                                <h5><a href="{{ route('tours') }}">Chinh Phục Cảnh Quan Việt Nam</a></h5>
+                                <p>Khám phá những cảnh đẹp hùng vĩ và tuyệt vời của đất nước Việt Nam.</p>
                             </div>
                         </div>
                         <div class="feature-item">
                             <div class="icon"><i class="flaticon-tent"></i></div>
                             <div class="content">
-                                <h5><a href="{{route('tours')}}">Chèo thuyền kayak</a></h5>
-                                <p>Chèo thuyền kayak là một hoạt động ngoài trời thú vị mang tính phiêu lưu</p>
+                                <h5><a href="{{ route('tours') }}">Trải Nghiệm Đặc Sắc Việt Nam</a></h5>
+                                <p>Trải nghiệm những hoạt động và lễ hội đặc trưng của văn hóa Việt.</p>
                             </div>
                         </div>
                     </div>
@@ -254,15 +205,15 @@
                         <div class="feature-item mt-20">
                             <div class="icon"><i class="flaticon-tent"></i></div>
                             <div class="content">
-                                <h5><a href="{{route('tours')}}">Xe đạp leo núi</a></h5>
-                                <p>Đạp xe leo núi là môn thể thao thú vị giúp rèn luyện thể lực</p>
+                                <h5><a href="{{ route('tours') }}">Khám Phá Di Sản Việt Nam</a></h5>
+                                <p>Khám phá các di sản thế giới và những kỳ quan thiên nhiên nổi tiếng.</p>
                             </div>
                         </div>
                         <div class="feature-item">
                             <div class="icon"><i class="flaticon-tent"></i></div>
                             <div class="content">
-                                <h5><a href="{{route('tours')}}">Câu cá & Thuyền</a></h5>
-                                <p>Câu cá và chèo thuyền mang lại niềm vui là hoạt động cốt lõi</p>
+                                <h5><a href="{{ route('tours') }}">Vẻ Đẹp Thiên Nhiên Việt </a></h5>
+                                <p>Chinh phục vẻ đẹp tự nhiên hoang sơ và kỳ vĩ của Việt Nam.</p>
                             </div>
                         </div>
                     </div>
@@ -273,88 +224,15 @@
 </section>
 <!-- Features Area end -->
 
-<!-- Testimonials Area start -->
-<section class="testimonials-area rel z-1">
-    <div class="container">
-        <div class="testimonials-wrap bgc-lighter">
-            <div class="row">
-                <div class="col-lg-5 rel" data-aos="fade-right" data-aos-duration="1500" data-aos-offset="50">
-                    <div class="testimonial-left-image rmb-55"
-                        style="background-image: url({{ asset('clients/assets/images/testimonials/testimonial-left.jpg')}});"></div>
-                </div> 
-                <div class="col-lg-7">
-                    <div class="testimonial-right-content" data-aos="fade-left" data-aos-duration="1500"
-                        data-aos-offset="50">
-                        <div class="section-title mb-55">
-                            <h2><span>5280</span> Global Clients Say About Us Services</h2>
-                        </div>
-                        <div class="testimonials-active">
-                            <div class="testimonial-item">
-                                <div class="testi-header">
-                                    <div class="quote"><i class="flaticon-double-quotes"></i></div>
-                                    <h4>Quality Services</h4>
-                                    <div class="ratting">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                    </div>
-                                </div>
-                                <div class="text">"Our trip was absolutely a perfect, thanks this travel agency! They
-                                    took care of every detail, from to accommodations, and even suggested incredible
-                                    experiences"</div>
-                                <div class="author">
-                                    <div class="image"><img src="{{ asset('clients/assets/images/testimonials/author.jpg')}}"
-                                            alt="Author"></div>
-                                    <div class="content">
-                                        <h5>Randall V. Vasquez</h5>
-                                        <span>Graphics Designer</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="testimonial-item">
-                                <div class="testi-header">
-                                    <div class="quote"><i class="flaticon-double-quotes"></i></div>
-                                    <h4>Quality Services</h4>
-                                    <div class="ratting">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                    </div>
-                                </div>
-                                <div class="text">"Our trip was absolutely a perfect, thanks this travel agency! They
-                                    took care of every detail, from to accommodations, and even suggested incredible
-                                    experiences"</div>
-                                <div class="author">
-                                    <div class="image"><img src="{{ asset('clients/assets/images/testimonials/author.jpg')}}"
-                                            alt="Author"></div>
-                                    <div class="content">
-                                        <h5>Randall V. Vasquez</h5>
-                                        <span>Graphics Designer</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Testimonials Area end -->
-
-
 <!-- CTA Area start -->
 <section class="cta-area pt-100 rel z-1">
     <div class="container-fluid">
         <div class="row">
             <div class="col-xl-4 col-md-6" data-aos="zoom-in-down" data-aos-duration="1500" data-aos-offset="50">
-                <div class="cta-item" style="background-image: url({{ asset('clients/assets/images/cta/cta1.jpg')}});">
-                    <span class="category">Cắm trại bằng lều</span>
-                    <h2>Khám phá du lịch tốt nhất Việt Nam</h2>
+                <div class="cta-item"
+                    style="background-image: url( {{ asset('clients/assets/images/cta/cta1.jpg') }});">
+                    <span class="category">Khám Phá Vẻ Đẹp Văn Hóa Việt</span>
+                    <h2>Tìm hiểu những giá trị văn hóa độc đáo của các vùng miền Việt Nam.</h2>
                     <a href="{{ route('tours') }}" class="theme-btn style-two bgc-secondary">
                         <span data-hover="Khám phá">Khám phá</span>
                         <i class="fal fa-arrow-right"></i>
@@ -363,9 +241,10 @@
             </div>
             <div class="col-xl-4 col-md-6" data-aos="zoom-in-down" data-aos-delay="50" data-aos-duration="1500"
                 data-aos-offset="50">
-                <div class="cta-item" style="background-image: url({{ asset('clients/assets/images/cta/cta2.jpg')}});">
-                    <span class="category">Sea Beach</span>
-                    <h2>World largest Sea Beach in Thailand</h2>
+                <div class="cta-item"
+                    style="background-image: url( {{ asset('clients/assets/images/cta/cta2.jpg') }});">
+                    <span class="category">Bãi biển Sea</span>
+                    <h2>Bãi trong xanh dạt dào ở Việt Nam</h2>
                     <a href="{{ route('tours') }}" class="theme-btn style-two">
                         <span data-hover="Khám phá">Khám phá</span>
                         <i class="fal fa-arrow-right"></i>
@@ -374,9 +253,10 @@
             </div>
             <div class="col-xl-4 col-md-6" data-aos="zoom-in-down" data-aos-delay="100" data-aos-duration="1500"
                 data-aos-offset="50">
-                <div class="cta-item" style="background-image: url({{ asset('clients/assets/images/cta/cta3.jpg')}});">
-                    <span class="category">Water Falls</span>
-                    <h2>Largest Water falls Bali, Indonesia</h2>
+                <div class="cta-item"
+                    style="background-image: url( {{ asset('clients/assets/images/cta/cta3.jpg') }});">
+                    <span class="category">Thác nước</span>
+                    <h2>Thác nước lớn nhất Việt Nam</h2>
                     <a href="{{ route('tours') }}" class="theme-btn style-two bgc-secondary">
                         <span data-hover="Khám phá">Khám phá</span>
                         <i class="fal fa-arrow-right"></i>
@@ -389,7 +269,7 @@
 <!-- CTA Area end -->
 
 
-<!-- Blog Area start -->
+{{-- <!-- Blog Area start -->
 <section class="blog-area py-70 rel z-1">
     <div class="container">
         <div class="row justify-content-center">
@@ -468,7 +348,7 @@
         </div>
     </div>
 </section>
-<!-- Blog Area end -->
+<!-- Blog Area end --> --}}
 
 
 @include('clients.blocks.footer_home')

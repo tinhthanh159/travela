@@ -4,63 +4,32 @@ namespace App\Http\Controllers\clients;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ContactController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
         $title = 'Liên hệ';
-        return view('clients.contact', data: compact('title'));
+        return view('clients.contact', compact('title'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
+    public function createContact(Request $req){
+        $dataContact = [
+            'fullName'    => $req->name,
+            'phoneNumber' => $req->phone_number,
+            'email'       => $req->email,
+            'message'     => $req->message,
+            'isReply'     => 'n',
+        ];
+    
+        $createContact = DB::table('tbl_contact')->insert($dataContact); 
+    
+        if ($createContact) {
+            return response()->json(['success' => true, 'message' => 'Gửi thành công. Chúng tôi sẽ sớm liên hệ tới bạn!']);
+        } else {
+            return response()->json(['success' => false, 'message' => 'Có lỗi xảy ra. Xin vui lòng thử lại.'], 500);
+        }
     }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
-    }
+    
 }
