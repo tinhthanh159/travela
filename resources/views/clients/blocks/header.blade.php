@@ -141,7 +141,7 @@
                                     <ul class="dropdown-menu" id="dropdownMenu">
                                         @if (session()->has('username'))
                                             <li><a href="#">Thông tin cá nhân</a></li>
-                                            <li><a href="#">Tour đã đặt</a></li>
+                                            <li><a href="{{ route('my-tours') }}">Tour đã đặt</a></li>
                                             <li><a href="{{ route('logout') }}">Đăng xuất</a></li>
                                         @else
                                             <li><a href="{{ route('login') }}">Đăng nhập</a></li>

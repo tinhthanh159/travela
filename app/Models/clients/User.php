@@ -16,8 +16,8 @@ class User extends Model
     public function getUserId($username)
     {
         return DB::table($this->table)
-            ->where('username', $username)
-            ->value('userId');
+            ->select('userId')
+            ->where('username', $username)->value('userId');
     }
 
     // Lấy thông tin người dùng theo ID
@@ -46,7 +46,13 @@ class User extends Model
             ->orderByDesc('tbl_booking.bookingDate')
             ->take(3)
             ->get();
-
+        foreach ($myTours as $tour) {
+            // Lấy rating từ tbl_reviews cho mỗi tour
+            $tour->rating = DB::table('tbl_reviews')
+                ->where('tourId', $tour->tourId)
+                ->where('userId', $id)
+                ->value('rating'); // Dùng value() để lấy giá trị rating
+        }
         foreach ($myTours as $tour) {
             // Lấy đánh giá (rating) của user cho mỗi tour
             $tour->rating = DB::table('tbl_reviews')

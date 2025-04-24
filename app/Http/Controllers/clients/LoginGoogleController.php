@@ -45,7 +45,7 @@ class LoginGoogleController extends Controller
                 $this->user->registerAcount($data_google);
 
                 $newUser = $this->user->checkUserExistGoogle($user->id);
-
+                
                 if ($newUser) {
                     session()->put('username', $newUser->username);
                     return redirect()->intended('/');

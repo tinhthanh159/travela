@@ -6,9 +6,11 @@ use Illuminate\Support\Str;
 use App\Http\Controllers\Controller;
 use App\Models\clients\Login;
 use App\Models\clients\User;
-use Flasher\Toastr\Laravel\Facade\Toastr;
+use Flasher\Laravel\Facade\Flasher;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+
+
 
 class LoginController extends Controller
 {
@@ -101,14 +103,13 @@ class LoginController extends Controller
 
         if ($user_login != null) {
             $request->session()->put('username', $username);
-            //$request->session()->put('avatar', $user->avatar);
-            toastr::success('Đăng nhập thành công!', ['timeOut' => 5000]); 
+            $request->session()->put('avatar', $user->avatar);
+            toastr()->success('Đăng nhập thành công!',[],'Thông báo');
             return response()->json([
                 'success' => true,
                 'message' => 'Đăng nhập thành công!',
                 'redirectUrl' => route('home'),  // Optional: dynamic home route
             ]);
-
         } else {
             return response()->json([
                 'success' => false,
@@ -116,18 +117,17 @@ class LoginController extends Controller
             ]);
         }
     }
-    
+
     public function logout(Request $request)
     {
         // Xóa session lưu trữ thông tin người dùng đã đăng nhập
         $request->session()->forget('username');
-    
+        $request->session()->forget('avatar');
+        $request->session()->forget('userId');
         // Thêm thông báo toastr vào session
-        $request->session()->flash('toastr_success', 'Đăng xuất thành công!');
-    
+        toastr()->success('Đăng xuất thành công!', [], 'Thông báo');
+        
         // Chuyển hướng về trang chủ hoặc trang bạn muốn
         return redirect()->route('home');
     }
-    
-
 }
