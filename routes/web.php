@@ -22,6 +22,9 @@ use App\Http\Controllers\clients\TourBookedController;
 use App\Http\Controllers\admin\ToursManagementController;
 use App\Http\Controllers\admin\BookingManagementController;
 use App\Http\Controllers\admin\ContactManagementController;
+use App\Http\Controllers\admin\LoginAdminController;
+use App\Http\Controllers\admin\AdminManagementController;
+use App\Http\Controllers\admin\UserManagementController;
 
 // Route::get('/', function () {
 //     return view('home');
@@ -77,10 +80,27 @@ Route::get('/user-profile', [UserProfileController::class, 'index'])->name('user
 Route::post('/user-profile', [UserProfileController::class, 'update'])->name('update-user-profile');
 Route::post('/change-password-profile', [UserProfileController::class, 'changePassword'])->name('change-password');
 Route::post('/change-avatar-profile', [UserProfileController::class, 'changeAvatar'])->name('change-avatar');
+//ADMIN
+// Routes without middleware
+Route::prefix('admin')->group(function () {
+    Route::get('/login', [LoginAdminController::class, 'index'])->name('admin.login');
+    Route::post('/login-account', [LoginAdminController::class, 'loginAdmin'])->name('admin.login-account');
+    Route::get('/logout', [LoginAdminController::class, 'logout'])->name('admin.logout');
+});
 
 Route::prefix('admin')->group(function () {
     //Admin
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
+    //Management admin
+    Route::get('/admin', [AdminManagementController::class, 'index'])->name('admin.admin');
+    Route::post('/update-admin', [AdminManagementController::class, 'updateAdmin'])->name('admin.update-admin');
+    Route::post('/update-avatar', [AdminManagementController::class, 'updateAvatar'])->name('admin.update-avatar');
+    
+    //Handler management user
+    Route::get('/users', [UserManagementController::class, 'index'])->name('admin.users');
+    Route::post('/active-user', [UserManagementController::class, 'activeUser'])->name('admin.active-user');
+    Route::post('/status-user', [UserManagementController::class, 'changeStatus'])->name('admin.status-user');
+
     Route::get('/tours', [ToursManagementController::class, 'index'])->name('admin.tours');
     Route::get('/page-add-tours', [ToursManagementController::class, 'pageAddTours'])->name('admin.page-add-tours');
     Route::get('/tour-edit', [ToursManagementController::class, 'getTourEdit'])->name('admin.tour-edit');
