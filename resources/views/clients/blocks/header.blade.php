@@ -45,6 +45,8 @@
     <link rel="stylesheet" href="{{ asset('clients/assets/css/css-login/style.css') }}">
     {{-- custom css by Tinh --}}
     <link rel="stylesheet" href="{{ asset('clients/assets/css/custom-css.css') }}" />
+    {{-- User Profile  --}}
+    <link rel="stylesheet" href="{{ asset('clients/assets/css/user-profile.css') }}" />
     <!-- toastr CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
 
@@ -136,11 +138,20 @@
                             <div class="menu-sidebar">
                                 <li class="drop-down">
                                     <button class="dropdown-toggle bg-transparent" id="userDropdown">
-                                        <i class="bx bxs-user bx-tada " style="font-size: 36px; color: black"></i>
+                                        @if (session()->has('avatar'))
+                                            @php
+                                                $avatar = session()->get('avatar', 'user_avatar.jpg');
+                                            @endphp
+                                            <img id="avatarPreview" class="img-account-profile rounded-circle"
+                                                src="{{ asset('admin/assets/images/user-profile/' . $avatar) }}"
+                                                style="width: 36px; height: 36px;">
+                                        @else
+                                            <i class='bx bxs-user bx-tada' style="font-size: 36px; color: rgb(12, 12, 12);"></i>
+                                        @endif
                                     </button>
                                     <ul class="dropdown-menu" id="dropdownMenu">
                                         @if (session()->has('username'))
-                                            <li><a href="#">Thông tin cá nhân</a></li>
+                                            <li><a href="{{ route('user-profile') }}">Thông tin cá nhân</a></li>
                                             <li><a href="{{ route('my-tours') }}">Tour đã đặt</a></li>
                                             <li><a href="{{ route('logout') }}">Đăng xuất</a></li>
                                         @else

@@ -17,6 +17,7 @@ use App\Http\Controllers\clients\SearchController;
 use App\Http\Controllers\clients\BookingController;
 use App\Http\Controllers\admin\DashboardController;
 use App\Http\Controllers\clients\MyTourController;
+use App\Http\Controllers\clients\UserProfileController;
 use App\Http\Controllers\clients\TourBookedController;
 use App\Http\Controllers\admin\ToursManagementController;
 use App\Http\Controllers\admin\BookingManagementController;
@@ -70,6 +71,12 @@ Route::post('/cancel-booking', [TourBookedController::class, 'cancelBooking'])->
 //Booking-check
 Route::post('/checkBooking', [BookingController::class, 'checkBooking'])->name('checkBooking')->middleware('checkLoginClient');
 Route::post('/reviews', [TourDetailController::class, 'reviews'])->name('reviews')->middleware('checkLoginClient');
+
+//Handle user profile
+Route::get('/user-profile', [UserProfileController::class, 'index'])->name('user-profile')->middleware('checkLoginClient');
+Route::post('/user-profile', [UserProfileController::class, 'update'])->name('update-user-profile');
+Route::post('/change-password-profile', [UserProfileController::class, 'changePassword'])->name('change-password');
+Route::post('/change-avatar-profile', [UserProfileController::class, 'changeAvatar'])->name('change-avatar');
 
 Route::prefix('admin')->group(function () {
     //Admin
