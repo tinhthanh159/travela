@@ -4,18 +4,20 @@ namespace App\Http\Controllers\clients;
 
 use App\Http\Controllers\Controller;
 use App\Models\clients\Tours;
+use App\Services\TourRecommendationService;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Http;
 
 class TourDetailController extends Controller
 {
 
     private $tours;
+    private $recommendationService;
 
-    public function __construct()
+    public function __construct(Tours $tours, TourRecommendationService $recommendationService)
     {
         parent::__construct(); // Gọi constructor của Controller để khởi tạo $user
-        $this->tours = new Tours();
+        $this->tours = $tours;
+        $this->recommendationService = $recommendationService;
     }
     public function index($id=0)
     {
@@ -25,6 +27,8 @@ class TourDetailController extends Controller
         $tourDetail = $this->tours->getTourDetail($id);
         $getReviews = $this->tours->getReviews($id);
         $reviewStats = $this->tours->reviewStats($id);
+
+        $recommendedTours = $this->recommendationService->recommendForUser($userId, 4, $id);
 
         $avgStar = round($reviewStats->averageRating);
         $countReview = $reviewStats->reviewCount;
@@ -36,7 +40,7 @@ class TourDetailController extends Controller
             $checkDisplay = 'hide';
         }
         // dd($tourDetail->timeline);
-        return view('clients.tour-detail', data: compact('title', 'tourDetail','checkDisplay', 'getReviews', 'avgStar', 'countReview'));
+        return view('clients.tour-detail', data: compact('title', 'tourDetail','checkDisplay', 'getReviews', 'avgStar', 'countReview', 'recommendedTours'));
     }
 
     public function reviews(Request $req)
