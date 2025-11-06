@@ -16,6 +16,7 @@
                 </nav>
             </div>
         </div>
+
     </div>
 </section>
 <!-- Page Banner End -->
@@ -256,6 +257,75 @@
                 </div>
             </div>
         </div>
+
+        @if (isset($recommendedTours) && $recommendedTours->isNotEmpty())
+            <div class="row mt-80">
+                <div class="col-12">
+                    <div class="section-title text-center mb-40" data-aos="fade-up" data-aos-duration="1500"
+                        data-aos-offset="50">
+                        <h3>Gợi ý phù hợp với bạn</h3>
+                        <p class="mb-0">Các đề xuất được cá nhân hóa dựa trên lịch sử đặt tour và đánh giá của bạn.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row gap-20 justify-content-center">
+                @foreach ($recommendedTours as $recommended)
+                    <div class="col-xl-4 col-md-6">
+                        <div class="destination-item tour-grid style-three bgc-lighter block_tours equal-block-fix"
+                            data-aos="fade-up" data-aos-duration="1500" data-aos-offset="50">
+                            <div class="image">
+                                <span class="badge bgc-primary">AI gợi ý</span>
+                                <a href="#" class="heart"><i class="fas fa-heart"></i></a>
+                                @if (!empty($recommended->images) && count($recommended->images) > 0)
+                                    <img src="{{ asset('admin/assets/images/gallery-tours/' . $recommended->images[0]) }}"
+                                        alt="{{ $recommended->title }}">
+                                @else
+                                    <div class="placeholder-image d-flex align-items-center justify-content-center"
+                                        style="height: 250px; background: #f5f5f5; border-radius: 20px;">
+                                        <span>Chưa có hình ảnh</span>
+                                    </div>
+                                @endif
+                            </div>
+                            <div class="content equal-content-fix">
+                                <div class="destination-header">
+                                    <span class="location"><i class="fal fa-map-marker-alt"></i>
+                                        {{ $recommended->destination }}</span>
+                                    <div class="ratting">
+                                        @for ($i = 0; $i < 5; $i++)
+                                            @if ($recommended->rating && $i < round($recommended->rating))
+                                                <i class="fas fa-star"></i>
+                                            @else
+                                                <i class="far fa-star"></i>
+                                            @endif
+                                        @endfor
+
+                                    </div>
+                                </div>
+                                <h6><a href="{{ route('tour-detail', ['id' => $recommended->tourId]) }}">{{ $recommended->title }}</a>
+                                </h6>
+                                <ul class="blog-meta">
+                                    <li><i class="far fa-clock"></i>{{ $recommended->time }}</li>
+                                    <li><i class="far fa-user"></i>{{ $recommended->quantity }}</li>
+                                </ul>
+                                <div class="destination-footer">
+                                    <span class="price"><span>{{ number_format($recommended->priceAdult, 0, ',', '.') }}</span>
+                                        VND / người</span>
+                                    <a href="{{ route('tour-detail', ['id' => $recommended->tourId]) }}"
+                                        class="theme-btn style-two style-three">
+                                        <i class="fal fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                                @if (!is_null($recommended->recommendationScore))
+                                    <div class="mt-10 small text-muted">
+                                        Điểm gợi ý: {{ number_format($recommended->recommendationScore, 2) }}
+                                    </div>
+                                @endif
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        @endif
     </div>
 </section>
 <!-- Tour Details Area end -->
